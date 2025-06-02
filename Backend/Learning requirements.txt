@@ -1,0 +1,7 @@
+flask
+flask-cors
+openai
+
+Learn flask - https://youtu.be/oA8brF3w5XQ?si=kNQtmGyKtFr4pS8w
+CORS - https://youtu.be/mQ945KwuPjU?si=mNTzU7VuL5duy3Gi
+OpenAI - https://youtu.be/0Q1AQAxpdGg?si=noBON3lNU9Ath2vT
