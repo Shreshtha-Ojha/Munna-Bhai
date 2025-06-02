@@ -47,3 +47,4 @@ def ask_ai():
 if __name__ == "__main__":
     app.run(debug=True)
 
+#Used Flask, Flask CORS and OpenaAI
