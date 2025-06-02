@@ -1,7 +1,7 @@
 File Structure
 Backend
     app.py - AI queries ko handle karega aur openai api key ka use karne ke liye Flask code
-    Learning Requirement.txt - Kya padhna hai...youtube links (change later)
+    Learning Requirement.txt - tech stacks used
     README.md  - Overall Structure and Backend mein kya hona chaahiye
 
     Will Accept POST requests from Chrome Extensions
