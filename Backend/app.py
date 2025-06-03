@@ -11,7 +11,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 SYSTEM_PROMPT = (
     "You're a coding mentor who explains with humor and clarity. "
-    "After answering a programming question, generate a follow-up MCQ with:\n"
+    "After answering a chunk of the programming question, generate a follow-up MCQ with:\n"
     "- question (text)\n"
     "- options (list of 3 options)\n"
     "- correct_index (integer index 0/1/2)\n\n"
@@ -38,11 +38,11 @@ def ask_ai():
 
         content = completion.choices[0].message.content
 
-        # Parse structured JSON from model
+        # Parsing the model
         try:
             response_json = json.loads(content)
         except json.JSONDecodeError:
-            return jsonify({"answer": "Sorry bhidu, model se kuch gadbad aaya. Try again."}), 500
+            return jsonify({"answer": "Sorry bhidu, model se kuch error aaya. Try again."}), 500
 
         return jsonify(response_json)
 
