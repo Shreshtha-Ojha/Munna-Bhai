@@ -7,8 +7,10 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Review needed
+openai.api_key = os.getenv("OPENAI_API_KEY")  
 
+# AI Assistant prompt
 SYSTEM_PROMPT = (
     "You're a coding mentor who explains with Munna Bhai style humor and clarity. "
     "After answering a chunk of the programming question, generate a follow-up MCQ with:\n"
@@ -27,8 +29,9 @@ def ask_ai():
         if not user_prompt:
             return jsonify({"answer": "No prompt received."}), 400
 
+        # GPT-4o-mini model 
         completion = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o-mini",  
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_prompt}
@@ -38,7 +41,7 @@ def ask_ai():
 
         content = completion.choices[0].message.content
 
-        # Parsing the model
+        # Parse response via JSON
         try:
             response_json = json.loads(content)
         except json.JSONDecodeError:
@@ -51,4 +54,5 @@ def ask_ai():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
