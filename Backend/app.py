@@ -10,7 +10,7 @@ CORS(app)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 SYSTEM_PROMPT = (
-    "You're a coding mentor who explains with humor and clarity. "
+    "You're a coding mentor who explains with Munna Bhai style humor and clarity. "
     "After answering a chunk of the programming question, generate a follow-up MCQ with:\n"
     "- question (text)\n"
     "- options (list of 3 options)\n"
