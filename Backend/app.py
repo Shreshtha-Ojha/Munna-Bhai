@@ -50,7 +50,7 @@ def ask_ai():
         return jsonify(response_json)
 
     except Exception as e:
-        return jsonify({"answer": f"Error: {str(e)}"}), 500
+        return jsonify({"answer": "Bhai kuch toh gadbad hai...chill kar!"}), 500
 
 if __name__ == "__main__":
     app.run(debug=True)
